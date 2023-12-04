@@ -1,0 +1,5 @@
+[Unit]
+Description="backup"
+
+[Service]
+ExecStart="gsutil cp -r /home/mpiase/data/ gs://testing-bucket-with-no-public-access/"
