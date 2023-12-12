@@ -1,4 +1,4 @@
-# PeEx
+# CloudStorage
 ## L1
 - [Storage Bucket created](https://github.com/o-lenczyk/peex/blob/main/CloudStorage/bucket.tf#L1) (storage class and location of your choice)
 - [Storage Bucket data lifecycle](https://github.com/o-lenczyk/peex/blob/main/CloudStorage/bucket.tf#L7) is defined (data lifecycle option of your choice)
