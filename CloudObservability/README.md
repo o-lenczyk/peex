@@ -1,12 +1,11 @@
 # Cloud Security  
 ## L1  
-- GCP Cloud Monitoring is enabled  
-- add a dashboard  
-- add a chart for basic components (CPU, RAM, Disk, etc.)  
+- GCP Cloud Monitoring is [enabled](https://github.com/o-lenczyk/peex/blob/main/CloudObservability/dashboard.tf#L1)  
+- add a [dashboard](https://github.com/o-lenczyk/peex/blob/main/CloudObservability/dashboard.tf#L6)  
+- add a chart for basic components ([CPU](https://github.com/o-lenczyk/peex/blob/main/CloudObservability/dashboard/dashboard.json#L11), RAM, [Disk](https://github.com/o-lenczyk/peex/blob/main/CloudObservability/dashboard/dashboard.json#L49), etc.)  
 - configure a Metrics explorer  
 - Create resource groups  
-- Configure Uptime monitoring:  
-- Create Uptime Checks  
+- Create [Uptime Checks](https://github.com/o-lenczyk/peex/blob/main/CloudObservability/uptime_check.tf#L1)  
   
 ## L2  
 - Enabling the Monitoring API  
