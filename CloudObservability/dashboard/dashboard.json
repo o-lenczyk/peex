@@ -1,0 +1,123 @@
+{
+    "dashboardFilters": [],
+    "displayName": "New Dashboard - Dec 12, 2023 12:06 PM",
+    "labels": {},
+    "mosaicLayout": {
+      "columns": 12,
+      "tiles": [
+        {
+          "height": 4,
+          "widget": {
+            "title": "VM Instance - CPU usage [SUM]",
+            "xyChart": {
+              "chartOptions": {
+                "mode": "COLOR"
+              },
+              "dataSets": [
+                {
+                  "breakdowns": [],
+                  "dimensions": [],
+                  "measures": [],
+                  "minAlignmentPeriod": "60s",
+                  "plotType": "LINE",
+                  "targetAxis": "Y1",
+                  "timeSeriesQuery": {
+                    "timeSeriesFilter": {
+                      "aggregation": {
+                        "alignmentPeriod": "60s",
+                        "crossSeriesReducer": "REDUCE_SUM",
+                        "groupByFields": [],
+                        "perSeriesAligner": "ALIGN_RATE"
+                      },
+                      "filter": "metric.type=\"compute.googleapis.com/instance/cpu/usage_time\" resource.type=\"gce_instance\""
+                    }
+                  }
+                }
+              ],
+              "thresholds": [],
+              "yAxis": {
+                "label": "",
+                "scale": "LINEAR"
+              }
+            }
+          },
+          "width": 6
+        },
+        {
+          "height": 4,
+          "widget": {
+            "title": "VM Instance - Disk read bytes [SUM]",
+            "xyChart": {
+              "chartOptions": {
+                "mode": "COLOR"
+              },
+              "dataSets": [
+                {
+                  "breakdowns": [],
+                  "dimensions": [],
+                  "measures": [],
+                  "minAlignmentPeriod": "60s",
+                  "plotType": "LINE",
+                  "targetAxis": "Y1",
+                  "timeSeriesQuery": {
+                    "timeSeriesFilter": {
+                      "aggregation": {
+                        "alignmentPeriod": "60s",
+                        "crossSeriesReducer": "REDUCE_SUM",
+                        "groupByFields": [],
+                        "perSeriesAligner": "ALIGN_RATE"
+                      },
+                      "filter": "metric.type=\"compute.googleapis.com/instance/disk/read_bytes_count\" resource.type=\"gce_instance\""
+                    }
+                  }
+                }
+              ],
+              "thresholds": [],
+              "yAxis": {
+                "label": "",
+                "scale": "LINEAR"
+              }
+            }
+          },
+          "width": 6,
+          "xPos": 6
+        },
+        {
+          "height": 4,
+          "widget": {
+            "title": "VM Instance - Ingress bytes [SUM]",
+            "xyChart": {
+              "chartOptions": {
+                "mode": "COLOR"
+              },
+              "dataSets": [
+                {
+                  "minAlignmentPeriod": "60s",
+                  "plotType": "LINE",
+                  "targetAxis": "Y1",
+                  "timeSeriesQuery": {
+                    "timeSeriesFilter": {
+                      "aggregation": {
+                        "alignmentPeriod": "60s",
+                        "crossSeriesReducer": "REDUCE_SUM",
+                        "groupByFields": [],
+                        "perSeriesAligner": "ALIGN_RATE"
+                      },
+                      "filter": "metric.type=\"networking.googleapis.com/vm_flow/ingress_bytes_count\" resource.type=\"gce_instance\""
+                    }
+                  }
+                }
+              ],
+              "thresholds": [],
+              "yAxis": {
+                "label": "",
+                "scale": "LINEAR"
+              }
+            }
+          },
+          "width": 6,
+          "yPos": 4
+        }
+      ]
+    }
+  }
