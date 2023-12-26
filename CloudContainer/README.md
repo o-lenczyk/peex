@@ -1,26 +1,26 @@
 # Cloud Container  
 ## L1  
-- Artifact Repository exists and images can be stored/pushed there
-- Dockerfile exist (write your own or use an existing Dockerfile that is based on any parent image)
+- [Artifact Repository exists](https://github.com/o-lenczyk/peex/blob/main/CloudContainer/repo.tf#L1) and images can be stored/pushed there
+- [Dockerfile](CloudBuild/Dockerfile) exist (write your own or use an existing Dockerfile that is based on any parent image)
 - Image is working without any errors (use docker run command)
-- built image is pushed to the Artifact Repository
+- built image is [pushed](https://github.com/o-lenczyk/peex/blob/main/CloudContainer/repo.tf#L1) to the Artifact Repository
   
 ## L2  
-- create a GKE cluster with two node pools
+- create a GKE cluster with two [node pools](https://github.com/o-lenczyk/peex/blob/main/CloudContainer/gke.tf#L32)
 - node pools are visible via Google console, kubectl or gcloud
-- node pools can be easily resized
-- upgrade strategy for your cluster is created
-- alerts/updates about the new GKE version are prepared
-- maintenance window for the cluster is defined
+- node pools [can be easily resized](https://github.com/o-lenczyk/peex/blob/main/CloudContainer/gke.tf#L37)
+- [upgrade strategy](https://github.com/o-lenczyk/peex/blob/main/CloudContainer/gke.tf#L40) for your cluster is created
+- alerts/updates about the new GKE version are [prepared](https://github.com/o-lenczyk/peex/blob/main/CloudContainer/gke.tf#L18)
+- [maintenance window](https://github.com/o-lenczyk/peex/blob/main/CloudContainer/gke.tf#L25) for the cluster is defined
 - upgrade strategy is defined for every node pool in the cluster (upgrade strategy of your choice, try both of them)
 - enable notifications about cluster events
 - notifications for your cluster works
 - system and control plane metrics (observability metrics) are enabled
 - observability metrics are visible in Kubernetes Clusters -> Observability tab
 - monitoring for your cluster is enabled
-- dashboard for GKE is visible in Cloud Monitoring
-- logs for GKE are visible in Logs Explorer
-- metrics-based alerts for your cluster are created and work
+- [dashboard](screenshots/monitoring.png) for GKE is visible in Cloud Monitoring
+- [logs](screenshots/logs.png) for GKE are visible in Logs Explorer
+- metrics-based [alerts](screenshots/alert.png) for your cluster are created and work
 - monitoring for Kubernetes cluster enabled (create a cluster with monitoring enabled or enable it if the cluster exists)
 - configure the metrics you want to send to Cloud Monitoring
 - dashboard for Kubernetes Engine is visible and shows basic metrics
