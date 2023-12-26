@@ -1,4 +1,4 @@
-# Cloud Security  
+# Cloud Compute  
 ## L1  
 - Provision virtual machine with predefined [types](https://github.com/o-lenczyk/peex/blob/main/CloudSecurity/vm.tf#L8) and [images](https://github.com/o-lenczyk/peex/blob/main/CloudSecurity/vm.tf#L13)
   
