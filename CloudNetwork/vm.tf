@@ -99,7 +99,7 @@ resource "google_compute_instance" "vm-nebo1" {
     }
   }
 
-  tags = ["ssh","rdp","block-egress"]
+  tags = ["rdp","block-egress"]
 
   metadata = {
     enable-oslogin: "TRUE"
