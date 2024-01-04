@@ -120,3 +120,36 @@ resource "google_compute_instance" "vm-nebo1" {
     scopes = ["cloud-platform"]
   }
 }
+
+resource "google_compute_instance" "vm-nebo2" {
+  name         = "vm-nebo1"
+  machine_type = "f1-micro"
+  zone         = local.zone
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+
+  tags = ["rdp","block-egress"]
+
+  metadata = {
+    enable-oslogin: "TRUE"
+    ssh-keys = "mpiase_softserveinc_com:${file("keys/id_rsa.pub")}"
+  }
+
+  network_interface {
+    subnetwork = google_compute_subnetwork.snet-public.id
+
+    access_config {
+      // Ephemeral public IP
+    }
+  }
+
+  service_account {
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = google_service_account.default.email
+    scopes = ["cloud-platform"]
+  }
+}
