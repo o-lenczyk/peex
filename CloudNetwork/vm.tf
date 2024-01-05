@@ -22,66 +22,66 @@ resource "google_project_iam_binding" "iap" {
     ]
 }
 
-# resource "google_compute_instance" "vm1" {
-#   name         = "vm1"
-#   machine_type = "f1-micro"
-#   zone         = local.zone
+resource "google_compute_instance" "vm1" {
+  name         = "vm1"
+  machine_type = "f1-micro"
+  zone         = local.zone
 
-#   boot_disk {
-#     initialize_params {
-#       image = "debian-cloud/debian-11"
-#     }
-#   }
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
 
-#   tags = ["http","https","ssh","connector"]
+  tags = ["http","https","ssh","connector"]
 
-#   metadata = {
-#     enable-oslogin: "TRUE"
-#   }
+  metadata = {
+    enable-oslogin: "TRUE"
+  }
 
-#   network_interface {
-#     subnetwork = google_compute_subnetwork.snet-private.id
+  network_interface {
+    subnetwork = google_compute_subnetwork.snet-private.id
 
-#   }
+  }
 
-#   service_account {
-#     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-#     email  = google_service_account.default.email
-#     scopes = ["cloud-platform"]
-#   }
-# }
+  service_account {
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = google_service_account.default.email
+    scopes = ["cloud-platform"]
+  }
+}
 
-# resource "google_compute_instance" "vm2" {
-#   name         = "vm2"
-#   machine_type = "f1-micro"
-#   zone         = local.zone
+resource "google_compute_instance" "vm2" {
+  name         = "vm2"
+  machine_type = "f1-micro"
+  zone         = local.zone
 
-#   boot_disk {
-#     initialize_params {
-#       image = "debian-cloud/debian-11"
-#     }
-#   }
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
 
-#   tags = ["http","https","ssh","connector"]
+  tags = ["http","https","ssh","connector"]
 
-#   metadata = {
-#     enable-oslogin: "TRUE"
-#   }
+  metadata = {
+    enable-oslogin: "TRUE"
+  }
 
-#   network_interface {
-#     subnetwork = google_compute_subnetwork.snet-public.id
+  network_interface {
+    subnetwork = google_compute_subnetwork.snet-public.id
 
-#     access_config {
-#       // Ephemeral public IP
-#     }
-#   }
+    access_config {
+      // Ephemeral public IP
+    }
+  }
 
-#   service_account {
-#     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-#     email  = google_service_account.default.email
-#     scopes = ["cloud-platform"]
-#   }
-# }
+  service_account {
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = google_service_account.default.email
+    scopes = ["cloud-platform"]
+  }
+}
 
 # resource "google_compute_instance" "vm-nebo1" {
 #   name         = "vm-nebo1"
