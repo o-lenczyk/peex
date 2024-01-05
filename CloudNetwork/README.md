@@ -1,13 +1,13 @@
 # Cloud Network
 ## L1
-- Virtual Machine named VM-nebo1 is deployed to snet-public 
-- User can connect using RDP protocol from specified public IP to VM-nebo1, all other inbound traffic is blocked
-- From VM-nebo1 outgoing traffic (TCP/UDP) is blocked despite a successful ping to 8.8.8.8
-- When a new virtual machine is deployed (VM-nebo2) all previous acceptance criteria are satisfied
-- VPC name should be vnet-nebo  
-- vnet-nebo should have two subnets: snet-public and snet-private
-- snet-public address space should be 10.0.0.0/17 
-- snet-private address space should be 10.0.128.0/17 
+- Virtual Machine named [VM-nebo1](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/vm.tf#L91) is deployed to [snet-public](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/vm.tf#L110) 
+- User can connect using RDP protocol from specified public IP to VM-nebo1, [all other inbound traffic is blocked](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/vm.tf#L102)
+- From VM-nebo1 [outgoing traffic (TCP/UDP) is blocked](gifs/firewall.gif) despite a successful ping to 8.8.8.8
+- When a new virtual machine is deployed ([VM-nebo2](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/vm.tf#L124)) all previous acceptance criteria are satisfied
+- [VPC](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/network.tf#L1) name should be vnet-nebo  
+- vnet-nebo should have two subnets: [snet-public](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/network.tf#L7) and [snet-private](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/network.tf#L14)
+- snet-public address space should be [10.0.0.0/17](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/network.tf#L9)
+- snet-private address space should be [10.0.128.0/17](https://github.com/o-lenczyk/peex/blob/main/CloudNetwork/network.tf#L16) 
   
 ## L2  
 - The virtual Network name should be deployed and named vnet-nebo  

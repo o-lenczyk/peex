@@ -6,14 +6,14 @@ resource "google_compute_network" "vnet-nebo" {
 
 resource "google_compute_subnetwork" "snet-public" {
   name          = "snet-public"
-  ip_cidr_range = "10.0.0.0/17"
+  ip_cidr_range = "192.168.0.0/17"
   region        = local.location
   network       = google_compute_network.vnet-nebo.id
 }
 
 resource "google_compute_subnetwork" "snet-private" {
   name          = "snet-private"
-  ip_cidr_range = "10.0.128.0/17"
+  ip_cidr_range = "10.0.0.0/24"
   region        = local.location
   network       = google_compute_network.vnet-nebo.id
 }
