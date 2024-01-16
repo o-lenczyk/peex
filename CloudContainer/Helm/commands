@@ -1,0 +1,7 @@
+helm package hello-chart
+
+helm push hello-chart-0.1.0.tgz oci://us-central1-docker.pkg.dev/gcp101713-michalpiasecki/my-repository
+
+gcloud artifacts docker images list us-central1-docker.pkg.dev/gcp101713-michalpiasecki/my-repository
+
+helm pull oci://us-central1-docker.pkg.dev/gcp101713-michalpiasecki/my-repository/hello-chart --version 0.1.0

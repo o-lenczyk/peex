@@ -29,12 +29,12 @@
 
 
 ## L3
-- Autoscaling a cluster— https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-autoscaler
-- Container instance autoscaling— https://cloud.google.com/run/docs/about-instance-autoscaling
-Integrate a Kubernetes Cluster with an External Vault - https://learn.hashicorp.com/tutorials/vault/kubernetes-external-vault
-- Manage Helm charts— https://cloud.google.com/artifact-registry/docs/helm/manage-charts
-- Create a sample chart— https://cloud.google.com/artifact-registry/docs/helm/quickstart
-Use Anthos Service Mesh egress gateways on the GKE clusters— https://cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial
+- Autoscaling a cluster
+- Container instance autoscaling
+- Integrate a Kubernetes Cluster with an [External Vault](gifs/k8s-hashicorp-vault.gif) 
+- [Manage](gifs/helm-repo.gif) Helm charts
+- [Create](Helm/hello-chart/) a sample chart
+- Use Anthos Service Mesh egress gateways on the GKE clusters
 
 ## L4
 Documented activities around the migration of a workload to the containerized environment that would consist of the following activities:
