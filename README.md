@@ -1,0 +1,13 @@
+### Table of contents
+- [CloudCompute](CloudCompute/README.md)
+- [CloudContainer](CloudContainer/README.md)
+- [CloudDB](CloudDB/README.md)
+- [CloudFunction](CloudFunction/README.md)
+- [CloudNetwork](CloudNetwork/README.md)
+- [CloudObservability](CloudObservability/README.md)
+- [CloudSecurity](CloudSecurity/README.md)
+- [CloudStorage](CloudStorage/README.md)
+- [Configuration Management](https://github.com/o-lenczyk/peex/blob/main/Configuration%20Management/README.md)
+- [Continuous Integration, Release, and Deployment](https://github.com/o-lenczyk/peex/blob/main/Continuous%20Integration%2C%20Release%2C%20and%20Deployment/README.md)
+- [Methodologies and Practices](https://github.com/o-lenczyk/peex/blob/main/Methodologies%20and%20Practices/README.md)
+- [Programming and Scripting](https://github.com/o-lenczyk/peex/blob/main/Programming%20and%20Scripting/README.md)
