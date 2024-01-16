@@ -1,0 +1,74 @@
+stages:  
+  - init
+  - validate  
+  - plan  
+  - apply  
+  - destroy
+variables:
+  TF_CODE_DIR: "provisioning" # Directory with terraform code for Vertex AI notebook  
+  SCAN_PATH: "provisioning" # Set the relative path in the repo to scan  
+  POLICY: "Default IaC policy" # Set the desired Wiz-cli policy to use
+
+default:  
+  tags:    
+    - pc0-data-science-softserveinit:  
+  stage: init  
+  script:    
+  - cd ${TF_CODE_DIR}    
+  - terraform init -input=false  
+  artifacts:    
+    paths:   
+      - "${TF_CODE_DIR}/.terraform/*"      
+      - "${TF_CODE_DIR}/.terraform.lock.hcl"   
+  when: always
+
+validate:  
+  stage: validate  
+  script:    
+  - cd ${TF_CODE_DIR}    
+  - terraform validate -no-color  
+  needs: [ "init" ]  
+  dependencies:    
+  - init
+  
+  wiz-scan:
+    stage: validate
+    script:
+    - export WIZ_CLIENT_SECRET=$(cat /bxp/secrets/pce-xcloud-runner/data-science-softserve/wiz-client-secret)
+    - unset WIZ_ENV
+    - wizcli auth --id $WIZ_CLIENT_ID --secret $WIZ_CLIENT_SECRET
+    - wizcli iac scan --path $SCAN_PATH --policy "${POLICY}" --detailed > wiz-scan-results.json
+    artifacts:
+      name: wiz-scan-results.json
+      paths:
+      - wiz-scan-results.json
+    needs: ["init"]
+
+plan:  
+  stage: plan  
+  script:    
+  - cd ${TF_CODE_DIR}   
+  - terraform plan  
+  needs: [ "init", "validate", "wiz-scan" ] 
+  dependencies:    
+  - init
+  
+  apply:  
+    stage: apply  
+    script:    
+    - cd ${TF_CODE_DIR}    
+    - terraform apply -auto-approve   
+    needs: [ "init", "validate", "wiz-scan", "plan" ]  
+    dependencies:
+    - init  
+    when: manual
+    
+destroy:  
+  stage: destroy  
+  script:    
+  - cd ${TF_CODE_DIR}   
+  - terraform destroy -auto-approve  
+  needs: [ "init", "validate", "wiz-scan", "plan" ]  
+  dependencies:  
+  - init 
+  when: manual
