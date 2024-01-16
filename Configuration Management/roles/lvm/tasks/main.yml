@@ -1,6 +1,6 @@
-# - name: setup lv
-#   import_tasks: lv.yml
-# - name: backup /var
-#   import_tasks: backup_var.yml
+- name: setup lv
+  import_tasks: lv.yml
+- name: backup /var
+  import_tasks: backup_var.yml
 - name: mount lv in /var
   import_tasks: mount_var.yml
