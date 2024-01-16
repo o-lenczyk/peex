@@ -11,3 +11,4 @@ update vm config:
 
 comments:
 - after initial run, comment or remove [`backup /var` task](roles/lvm/tasks/main.yml)
+- set `ANSIBLE_STDOUT_CALLBACK` to `yaml` for human friendly output

@@ -35,7 +35,7 @@ resource "google_compute_instance" "default" {
     ssh-keys = "${var.ssh_user}:${file(var.public_key_path)}"
   }
 
-  metadata_startup_script = "echo hi > /test.txt"
+  metadata_startup_script = "echo ${file(var.secret_file)}> /test.txt"
 
   service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
