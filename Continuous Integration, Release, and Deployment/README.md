@@ -5,7 +5,7 @@
 ## L2
 - create CI/CD pipeline
 - configure [versioning artifacts](https://github.com/o-lenczyk/dietly/blob/master/.github/workflows/build.yml)
-- sent [notifications](screenshots/PR-checks.png)
+- sent [notifications](screenshots/slack-notifications.png)
 - create [badge](https://github.com/o-lenczyk/dietly/blob/master/README.md)
 - integrate SonarQube or SonarCloud into the pipeline:
   - [CodeQL](https://github.com/o-lenczyk/dietly/blob/master/.github/workflows/codeql.yml)
