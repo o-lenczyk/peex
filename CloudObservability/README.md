@@ -23,6 +23,10 @@
 
 ## L3
 - Demonstrated monitoring dashboard that represents the real state of project infrastructure and you can explain what and why is monitored
+- [etcd monitoring](screenshots/etcd%20monitoring.png)
+- [k8s monitoring](screenshots/k8s-namespaces.png)
+- [k8s cluster overview](screenshots/k8s-cluster-overview.png)
+- [cpu per RunAI project usage](screenshots/cpu-per-project.png)
 - Automated tasks are called when Monitors fail. It can be anything from starting or restarting servers to running a custom script or executing a command
 - Runbook is integrated with the tools you use today: Heroku, Salt, Rackspace, DigitalOcean, Logentries, and others
 - Documents that describe steps to do when a monitoring alert appears
