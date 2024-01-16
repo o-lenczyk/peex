@@ -1,3 +1,6 @@
+# Hashicorp Vault
+cluster-keys.json
+
 key.json
 .terraform.lock.hcl
 id_rsa
