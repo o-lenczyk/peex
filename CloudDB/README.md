@@ -10,8 +10,10 @@
 ## L3  
 - Maintain and Troubleshoot DB services
 - Migrate DB services
-- Set up an automated migration of the databases between environments
+- Set up an [automated](scripts/github-workflow.yml) [migration](scripts/migrate.sh) of the databases between environments
 
 ## L4
 - Define a backup strategy
 
+## Bonus
+- [BigQuery](screenshots/bigquery.png)

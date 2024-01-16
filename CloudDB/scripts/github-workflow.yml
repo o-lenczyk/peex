@@ -1,0 +1,23 @@
+env:
+  db_name: ${{vars.DB_NAME}}
+  db_port: ${{vars.DB_PORT}}
+  db_user: ${{vars.DB_USER}}
+  db_host: ${{secrets.DB_HOST}}
+  db_pass: ${{secrets.DB_PASS}}
+  dietly_mail: ${{secrets.DIETLY_MAIL}}
+  dietly_pass: ${{secrets.DIETLY_PASS}}
+
+name: Migrate DB
+run-name: ${{ github.actor }} is migrating data
+on:
+  schedule:
+    - cron: '11 5 */2 * *'
+jobs:
+  scrap-dietly:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "${{secrets.CLIENT_KEY_PEM}}" > keys/client-key.pem
+      - run: ./migrate.sh
