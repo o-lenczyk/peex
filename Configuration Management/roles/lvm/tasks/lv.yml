@@ -1,0 +1,43 @@
+- name: create lvm partition on /dev/sdb
+  become: true
+  parted:
+    device: /dev/sdb
+    number: 1
+    flags: [ lvm ]
+    state: present
+    part_end: 10GB
+
+- name: create lvm partition on /dev/sdc
+  become: true
+  parted:
+    device: /dev/sdc
+    number: 1
+    flags: [ lvm ]
+    state: present
+    part_end: 10GB
+
+- name: "install lvm2"
+  become: yes
+  package:
+    name: "lvm2"
+    state: present
+
+- name: Create or resize a volume group on top of /dev/sdb1 and /dev/sdc1.
+  become: yes
+  community.general.lvg:
+    vg: vg.services
+    pvs: /dev/sdb1,/dev/sdc1
+
+- name: task for creating logical volume
+  become: yes
+  lvol:
+      vg: vg.services
+      lv:  sample-lv
+      size: 1g
+      force: yes
+
+- name: format the ext4 filesystem
+  become: yes
+  filesystem:
+    fstype: ext4
+    dev: /dev/vg.services/sample-lv

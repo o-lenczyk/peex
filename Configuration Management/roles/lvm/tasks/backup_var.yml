@@ -1,0 +1,46 @@
+- name: Create directory /var2 if does not exist
+  become: yes
+  file:
+    path: /var2
+    state: directory
+    mode: '0755'
+
+- name: mount the lv on /var2
+  become: yes
+  mount:
+    path: /var2
+    src: /dev/vg.services/sample-lv
+    fstype: ext4
+    state: mounted
+
+- name: "install rsync"
+  become: yes
+  package:
+    name: "rsync"
+    state: present
+
+- name: backup var
+  become: yes
+  synchronize:
+    src: /var/    # note the '/' <-- !!!
+    dest: /var2/
+    # lastlog is creating infinite file
+    rsync_opts:
+      - "--exclude=log/lastlog"
+  delegate_to: "{{ inventory_hostname }}"
+
+- name: unmount the lv on /var2
+  become: yes
+  mount:
+    path: /var2
+    src: /dev/vg.services/sample-lv
+    fstype: ext4
+    state: unmounted
+
+- name: Remove /var2 
+  become: yes
+  file:
+    path: /var2
+    state: directory
+    mode: '0755'
+    state: absent

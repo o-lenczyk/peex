@@ -1,0 +1,7 @@
+- name: mount the lv on /var
+  become: yes
+  mount:
+    path: /var
+    src: /dev/vg.services/sample-lv
+    fstype: ext4
+    state: mounted
