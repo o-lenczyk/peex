@@ -21,8 +21,6 @@
 - desing CI/CD
 
 CI/CD examples: 
-- automated creation of GitLab Repositories from teplate using GitLab API
-https://gitlab.com/project-factory-test/main/-/blob/main/.gitlab-ci.yml?ref_type=heads
-- Terraform Cloud workspace update
-https://gitlab.com/project-factory-test/tf-workspace-update
-- run  terraform [plan, apply, destroy](GitLab/[TERRAFORM].gitlab-ci.ymlcon)
+- automated creation of GitLab Repositories from teplate using GitLab API [.gitlab-ci.yml](https://gitlab.com/project-factory-test/main/-/blob/main/.gitlab-ci.yml?ref_type=heads)
+- Terraform Cloud workspace update [.gitlab-ci.yml](https://gitlab.com/project-factory-test/tf-workspace-update)
+- run  terraform [plan, apply, destroy](GitLab/[TERRAFORM].gitlab-ci.yml)
